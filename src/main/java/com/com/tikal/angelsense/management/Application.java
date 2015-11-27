@@ -16,7 +16,7 @@ public class Application {
 	}
 
 	@Bean
-	private CommandLineRunner init(final GuardianRepository guardianRepository) {
+	CommandLineRunner init(final GuardianRepository guardianRepository) {
 		return new CommandLineRunner() {
 			@Override
 			public void run(final String... args) throws Exception {
@@ -24,4 +24,6 @@ public class Application {
 			}
 		};
 	}
+	
+	
 }
