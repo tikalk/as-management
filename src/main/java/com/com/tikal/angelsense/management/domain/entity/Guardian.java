@@ -56,5 +56,10 @@ public class Guardian {
 	public Integer getId() {
 		return id;
 	}
+	
+	public Guardian addAngel(final Angel angel){
+		angels.add(angel);
+		return this;
+	}
 
 }

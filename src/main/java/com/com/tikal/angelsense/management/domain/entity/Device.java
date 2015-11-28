@@ -25,5 +25,50 @@ public class Device {
 	@ManyToOne
 	@JoinColumn(name="angel_id")
 	private Angel angel;
+	
+	
+
+	public Device() {
+	}
+
+
+
+	public Device(final String imei) {
+		this.imei = imei;
+	}
+
+	
+
+
+	public Device(final String imei, final Angel angel) {
+		this.imei = imei;
+		this.angel = angel;
+	}
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
+	public String getImei() {
+		return imei;
+	}
+
+	public void setImei(final String imei) {
+		this.imei = imei;
+	}
+
+	public Angel getAngel() {
+		return angel;
+	}
+
+	public void setAngel(final Angel angel) {
+		this.angel = angel;
+	}
+	
+	
 
 }
