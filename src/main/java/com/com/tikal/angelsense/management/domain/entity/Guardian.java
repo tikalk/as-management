@@ -12,6 +12,9 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.NaturalId;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name = "guardians")
 public class Guardian {
@@ -24,9 +27,11 @@ public class Guardian {
 	private String username;
 
 	@NotNull
+	@JsonIgnore
 	private String password;
 
 	@ManyToMany
+	@JsonProperty
 	private final Set<Angel> angels = new HashSet<>();
 
 	public Guardian() {
