@@ -28,7 +28,7 @@ public class Application {
 			public void run(final String... args) throws Exception {
 				final Angel a1 = angelRepository.save(new Angel("a1"));
 				guardianRepository.save(new Guardian("g1", "g1").addAngel(a1));
-				deviceRepository.save(new Device("863158020721652", a1));
+				deviceRepository.save(new Device("013950004346194", a1));
 				
 			}
 		};
