@@ -30,6 +30,14 @@ public class Application {
 				guardianRepository.save(new Guardian("g1", "g1").addAngel(a1));
 				deviceRepository.save(new Device("013950004346194", a1));
 				
+				final Angel a2 = angelRepository.save(new Angel("a2"));
+				guardianRepository.save(new Guardian("g2", "g2").addAngel(a2));
+				deviceRepository.save(new Device("863158021855913", a2));
+				
+				final Angel a3 = angelRepository.save(new Angel("a3"));
+				guardianRepository.save(new Guardian("g3", "g3").addAngel(a3));
+				deviceRepository.save(new Device("013950004334497", a3));
+				
 			}
 		};
 	}
