@@ -24,6 +24,17 @@ configurations {
     compile.exclude module: 'logback-core'
 }
 
+task zip(type: Zip, dependsOn: bootRepackage) {
+    from '.'
+    baseName = 'as-management'
+    include 'config/**'
+    include 'run-bin/*.sh'
+    include 'run-bin/*.bat'
+    include 'run-bin/*.sql'
+    include 'build/libs/*.jar'
+}
+build.dependsOn(zip)
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
