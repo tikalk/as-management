@@ -29,6 +29,9 @@ public class Guardian {
 	@NotNull
 	@JsonIgnore
 	private String password;
+	
+	@NotNull
+	private String email;
 
 	@ManyToMany
 	@JsonProperty
@@ -37,9 +40,10 @@ public class Guardian {
 	public Guardian() {
 	}
 
-	public Guardian(final String username, final String password) {
+	public Guardian(final String username, final String password,final String email) {
 		this.username = username;
 		this.password = password;
+		this.email = email;
 	}
 
 	public String getUsername() {

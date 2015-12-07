@@ -10,4 +10,7 @@ public interface GuardianRepository extends JpaRepository<Guardian, Integer> {
 
 	@Query("select g from Guardian g left join fetch g.angels where g.username = ?1")
 	public Guardian findByUsernameWithAngels(String guardianName);
+
+	@Query("select g.email from Guardian g join g.angels a where a.id = ?1")
+	public String findEmailByAngelId(int angelId);
 }

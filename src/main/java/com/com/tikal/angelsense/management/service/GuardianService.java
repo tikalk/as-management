@@ -1,6 +1,7 @@
 package com.com.tikal.angelsense.management.service;
 
 import javax.transaction.Transactional;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,5 +25,12 @@ public class GuardianService {
 	public Guardian findGuardianByUsernameWithAngels(@RequestParam final String username) {
 		return guardianRepository.findByUsernameWithAngels(username);
 	}
+	
+	@RequestMapping("/angels/{angelId}/guardian/email")
+	public String findGuardianEmailByAngelId(@PathVariable final int angelId) {
+		return guardianRepository.findEmailByAngelId(angelId);
+	}
+	
+
 
 }
