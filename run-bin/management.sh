@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting AngelSense Management"
+echo "Starting FleetTracker Management"
 
 DIRNAME=`dirname $0`
 APP_HOME=`cd $DIRNAME/..;pwd;`

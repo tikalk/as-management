@@ -1,6 +1,6 @@
-# AngelSense Management Service
+# FleetTracker Management Service
 
-This microservice is the management service for the AngelSense, where UI and other service can manage the entities of the system (Angel, Guardian, Device etc).
+This microservice is the management service for the FleetTracker, where UI and other service can manage the entities of the system (Vehicle, Guardian, Device etc).
 It is based on SpringBoot platform
 
 ## How to build

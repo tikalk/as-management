@@ -1,4 +1,4 @@
-package com.com.tikal.angelsense.management.domain.entity;
+package com.tikal.fleettracker.management.domain.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,7 +35,7 @@ public class Guardian {
 
 	@ManyToMany
 	@JsonProperty
-	private final Set<Angel> angels = new HashSet<>();
+	private final Set<Vehicle> vehicles = new HashSet<>();
 
 	public Guardian() {
 	}
@@ -66,8 +66,8 @@ public class Guardian {
 		return id;
 	}
 	
-	public Guardian addAngel(final Angel angel){
-		angels.add(angel);
+	public Guardian addVehicle(final Vehicle vehicle){
+		vehicles.add(vehicle);
 		return this;
 	}
 

@@ -1,4 +1,4 @@
-package com.com.tikal.angelsense.management.domain.entity;
+package com.tikal.fleettracker.management.domain.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,8 +23,8 @@ public class Device {
 	private String imei;
 	
 	@ManyToOne
-	@JoinColumn(name="angel_id")
-	private Angel angel;
+	@JoinColumn(name="vehicle_id")
+	private Vehicle vehicle;
 	
 	
 
@@ -40,9 +40,9 @@ public class Device {
 	
 
 
-	public Device(final String imei, final Angel angel) {
+	public Device(final String imei, final Vehicle vehicle) {
 		this.imei = imei;
-		this.angel = angel;
+		this.vehicle = vehicle;
 	}
 
 
@@ -61,12 +61,12 @@ public class Device {
 		this.imei = imei;
 	}
 
-	public Angel getAngel() {
-		return angel;
+	public Vehicle getVehicle() {
+		return vehicle;
 	}
 
-	public void setAngel(final Angel angel) {
-		this.angel = angel;
+	public void setVehicle(final Vehicle vehicle) {
+		this.vehicle = vehicle;
 	}
 	
 	

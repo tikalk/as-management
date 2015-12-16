@@ -1,4 +1,4 @@
-package com.com.tikal.angelsense.management.config;
+package com.tikal.fleettracker.management.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,8 +14,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.com.tikal.angelsense.management.domain.entity.Guardian;
-import com.com.tikal.angelsense.management.repository.jpa.GuardianRepository;
+import com.tikal.fleettracker.management.domain.entity.Guardian;
+import com.tikal.fleettracker.management.repository.jpa.GuardianRepository;
 
 @Configuration
 public class WebSecurityConfiguration extends GlobalAuthenticationConfigurerAdapter {
