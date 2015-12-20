@@ -36,7 +36,8 @@ configurations {
     compile.exclude module: 'logback-core'
 }
 
-task zip(type: Zip, dependsOn: bootRepackage) {
+task zip(type: Tar, dependsOn: bootRepackage) {
+    extension = 'tar.gz'
     from '.'
     baseName = 'as-management'
     include 'config/**'
@@ -48,18 +49,7 @@ task zip(type: Zip, dependsOn: bootRepackage) {
 build.dependsOn(zip)
 
 
-task buildImage(type: DockerBuildImage) {
-    dependsOn zip
-    quiet = false
-    inputDir = projectDir
-    tag = "$registerBaseName/$dockerBranch/$project.name:$dockerTag"
-}
 
-task pushImage(type: DockerPushImage) {
-    dependsOn buildImage
-    imageName = "$registerBaseName/$dockerBranch/$project.name"
-    tag="$dockerTag"
-}
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -77,4 +67,15 @@ dependencies {
     compile 'com.jolbox:bonecp:0.8.0.RELEASE'
     compile 'mysql:mysql-connector-java'
 }
+task buildImage(type: DockerBuildImage) {
+    dependsOn zip
+    quiet = false
+    inputDir = projectDir
+    tag = "$registerBaseName/$dockerBranch/$project.name:$dockerTag"
+}
 
+task pushImage(type: DockerPushImage) {
+    dependsOn buildImage
+    imageName = "$registerBaseName/$dockerBranch/$project.name"
+    tag="$dockerTag"
+}
