@@ -34,6 +34,7 @@ configurations {
     compile.exclude module: 'spring-boot-starter-logging'
     compile.exclude module: 'logback-classic'
     compile.exclude module: 'logback-core'
+    dockerJackson
 }
 
 task zip(type: Tar, dependsOn: bootRepackage) {
@@ -66,6 +67,8 @@ dependencies {
     compile 'com.h2database:h2'
     compile 'com.jolbox:bonecp:0.8.0.RELEASE'
     compile 'mysql:mysql-connector-java'
+    dockerJackson 'com.fasterxml.jackson.core:jackson-core:2.1.2'
+    dockerJackson 'com.fasterxml.jackson.core:jackson-databind:2.1.2'
 }
 task buildImage(type: DockerBuildImage) {
     dependsOn zip
@@ -75,6 +78,7 @@ task buildImage(type: DockerBuildImage) {
 }
 
 task pushImage(type: DockerPushImage) {
+    classpath = configurations.dockerJackson + configurations.dockerJava
     dependsOn buildImage
     imageName = "$registerBaseName/$dockerBranch/$project.name"
     tag="$dockerTag"
