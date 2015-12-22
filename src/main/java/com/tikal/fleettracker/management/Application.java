@@ -48,7 +48,7 @@ public class Application {
 		
 		deviceRepository.save(new Device("1131", a1));
 		deviceRepository.save(new Device("1277", b1));
-		deviceRepository.save(new Device("2237", c1));				
+		deviceRepository.save(new Device("8662", c1));				
 		deviceRepository.save(new Device("2560", d1));
 		deviceRepository.save(new Device("2669", e1));
 		deviceRepository.save(new Device("3015", f1));
