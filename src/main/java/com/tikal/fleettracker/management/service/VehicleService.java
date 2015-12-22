@@ -18,7 +18,6 @@ public class VehicleService {
 	@Autowired
 	private DeviceRepository deviceRepository;
 
-	// http://localhost:3080/api/v1/devices/013950004346194/vehicles
 	@RequestMapping("/devices/{imei}/vehicles")
 	@Cacheable("imeiToVehicleId")
 	public Integer findVehicleIdByDeviceImei(@PathVariable final String imei) {
