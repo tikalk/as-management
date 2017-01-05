@@ -10,6 +10,6 @@ EXPOSE 8080
 ADD build/distributions/as-management.tar.gz /as-management
 
 # Launch the verticle
-ENV WORKDIR /as-management/run-bin
-ENTRYPOINT ["sh", "-c"]
-CMD ["cd $WORKDIR ; ./management.sh"]
+WORKDIR /as-management
+
+CMD run-bin/management.sh
