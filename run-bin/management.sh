@@ -7,4 +7,4 @@ set -x
 DIRNAME=`dirname $0`
 APP_HOME=`cd $DIRNAME/..;pwd;`
 
-java -Duser.timezone="UTC" -jar $APP_HOME/build/libs/as-management.jar -cp $APP_HOME/config
+java -Duser.timezone="UTC" -jar $APP_HOME/build/libs/ft-management.jar -cp $APP_HOME/config

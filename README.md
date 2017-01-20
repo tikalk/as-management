@@ -10,14 +10,14 @@ From the project home folder run the following command:
 ./gradlew clean build -x test
 
 This will create self contained zip, that you can unzip on host container. The output zip is located at
-as-managemet/build/distributions/as-management.zip 
+ft-managemet/build/distributions/ft-management.zip
 
 ## How to run
 -----------
 You must run MySQL and have the user and schema according to the config file.
 
-Unzip the file as-managemet/build/distributions/as-management.zip  
-cd to the created folder (as-management)
+Unzip the file ft-managemet/build/distributions/ft-management.zip
+cd to the created folder (ft-management)
 Run the following command : 
 ./run-bin/management.sh
 
